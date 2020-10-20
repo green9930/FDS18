@@ -1,12 +1,118 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 @import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
 @import url(./fontello.css);
+*, *::before, *::after {
+    box-sizing: border-box;
+    /* 가끔 브라우저마다 기본값이 다른 경우가 있어서 ::before와 ::after을 명시하는 것
+    padding이나 border를 입력해도 박스 사이즈는 변함 없음 */
+    /* 모바일 환경에서 매우 편함... 모바일은 각자 사이즈가 달라서 보통 width를 100%로 설정
+    border-box를 쓰면서 padding을 입혀서 안에 내용의 폭 변함 없도록 */
+}
 
+/* 
+body *,
+body *::before,
+body *::after {
+    box-sizing: border-box;
+} 
+*/
+
+
+html {
+    font-size: 10px;
+}
 body {
     font-family: 'Spoqa Han Sans', 'Sans-serif';
+    font-size: 1.4rem;
+    /* display: flex;
+    flex-flow: column nowrap;    
+    align-items: center; */
 }
 
 /* 스킵 내비게이션 */
 .skip-nav {
     display: none;
+}
+
+/* 레이아웃 */
+.header, .visual, .main, .slogan {
+    width: 940px;
+    padding: 10px;
+    margin: 0 auto; 
+    /* viewport에서 content+border+padding+margin 제외하고 남은 값을 양쪽에 할당시켜 가운데 정렬처럼 보임 */
+    /* viewport 크기를 줄여도 마진 값이 줄어들며 가운데 정렬로 보임 */
+}
+
+.header {
+    background: yellow;
+}
+.visual {
+    background: lime;
+    height: 120px; /*가급적이면 높이를 고정하는게 좋은 방법은 아님.. 보통 광고창에 높이 픽스 */
+}
+
+/* .main {
+    background: skyblue;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 400px;
+    padding: 30px;
+    justify-content: space-between; */
+    /* space-evenly 를 쓰면 IE에서 적용 안됨 */
+    /* space-between을 넣고 main에서 직접 padding값 입력 */
+/* } */
+
+.main {
+    background: skyblue;
+    padding: 30px 15px;
+    overflow: hidden;
+    min-height: 450px; /*높이를 fix하지 말고 min-height 입력 -> contents에 따라 높이가 달라지도록*/
+}
+/* (1) group이 main을 뚫고 나올 때 main에 높이 지정 -> 경직된 방법... content 길이가 길어지면 또 수정해야되니까 */
+/* (2) html에 clearfix 추가 */
+
+/* (3)
+.clearfix {
+    clear: both;
+} 
+*/
+ /* .clearfix::after {
+     content: "";
+     clear: both;
+     /* block요소일때만 적용 가능.. inline에는 적용 안되고 ignore됨 / 문법적 오류는 아님.. */
+     /* display: block; */
+     /* main의 높이를 늘리지 않았지만 늘린 효과가 나타남 */
+ /* }  */
+
+.group {
+    margin: 0 15px;
+    float: left;
+}
+
+.group1 {
+    background: blueviolet;
+    width: 250px;
+    /* group1을 float 시키면 group1은 떠오르고 그 밑에 부모 요소에 보이지 않는 linebox가 생김 
+    linebox가 생기면서 linebox 기준 왼쪽에 위치함*/
+    /* 단 linebox가 생성되어 박스끼리 부딪힐 때 인라인 텍스트가 겹치면 밀어냄 */
+}
+.group2 {
+    background: tomato;
+    width: 380px;
+    /*linebox 단위로 떨어지기 때문에 group2의 height: 250px;만큼의 높이를 가진 linebox 생성 */
+
+}
+.group3 {
+    background: lightgoldenrodyellow;
+    width: 190px;
+
+}
+.slogan {
+    background: orange;
+}
+
+.footer {
+    width: 100%;
+    background: gray;
+    
 }
