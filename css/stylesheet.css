@@ -1,6 +1,16 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 @import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
 @import url(./fontello.css);
+/*숨김 제목 및 숨김 콘텐츠*/
+.a11y-hidden {
+    position: absolute; /*absolute 가 되면 독립된 블록으로 인식, offset을 주지 않으면 initial이 default*/
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: 0;
+    clip-path: polygon(0 0, 0 0, 0 0);
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     /* 가끔 브라우저마다 기본값이 다른 경우가 있어서 ::before와 ::after을 명시하는 것
@@ -25,7 +35,7 @@ html {
 body {
     font-family: 'Spoqa Han Sans', 'Sans-serif';
     font-size: 1.4rem;
-    color: #181818;
+    background-color: #ccc;
     /* display: flex;
     flex-flow: column nowrap;    
     align-items: center; */
@@ -49,7 +59,7 @@ body {
 /* 헤더 */
 .header {
     position: relative;
-    background: yellow;
+    background: #ffffff;
     padding: 0 40px;
     border-radius:  0 0 15px 15px;
     
@@ -80,7 +90,108 @@ body {
     text-decoration: none;
     padding: 8px 10px;
     display: inline-block;
-    background: pink;
+}
+
+/*내비게이션*/
+.navigation {
+    padding-bottom: 35px;
+}
+
+.menu {
+    background: linear-gradient(
+        to bottom,
+        #efa22f 0%,
+        #ed702d 35%,
+        #ed702d 70%,
+        #efa22f 100%
+    );
+    border-top: 2px solid currentColor;
+    margin: 10 0 0 0;
+    padding-left: 0;
+    list-style: none;
+    height: 47px;
+    border-radius: 0 0 5px 5px;
+    padding-left: 200px;
+}
+
+.menu-item {
+    position: relative;
+    float: left;
+
+
+}
+
+.menu-button {
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: #ffffff;
+    font-weight: 700;
+    background: transparent;
+    line-height: 45px;
+    display: block;
+    padding: 0 20px;
+    border: 0;
+    border-left: 2px solid rgba(255, 255, 255, .5);
+    text-shadow: 0 1px 0 #000000, 1px 0 0 #000000, 0 -1px 0 #000000, -1px 0 0 #000000;
+    /*1px 1px 0 #000000, -1px -1px 0 #000000;*/
+}
+
+.menu-act .menu-button {
+    color: #ff0;
+}
+
+.menu-act .menu-button::after {
+    content: "";
+    display: block;
+    border-top: 2px solid #000
+}
+
+.sub-menu {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    display: none;
+    position: absolute;
+    top: 47px; /* navigation 크기에 맞춰서 조정*/
+    left: 0;
+    white-space: nowrap;
+}
+
+.sub-menu li, 
+.sub-menu a {
+    display: inline-block;
+    padding: 8px 0;
+    margin-right: 10px;
+}
+
+.sub-menu a::before {
+    content: "\f192";
+    font-family: 'fontello';
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+}
+
+.sub-menu a:hover::before,
+.sub-menu a:focus::before {
+    content: '\e800';
+}
+
+.menu-act .sub-menu {
+    display: block;
+}
+
+.sub-menu1, 
+.sub-menu2, 
+.sub-menu3 {
+    left: 0;
+}
+
+.sub-menu4, 
+.sub-menu5, 
+.sub-menu6 {
+    right: 0;
 }
 
 .visual {
