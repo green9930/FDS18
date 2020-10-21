@@ -6,7 +6,7 @@
     /* 가끔 브라우저마다 기본값이 다른 경우가 있어서 ::before와 ::after을 명시하는 것
     padding이나 border를 입력해도 박스 사이즈는 변함 없음 */
     /* 모바일 환경에서 매우 편함... 모바일은 각자 사이즈가 달라서 보통 width를 100%로 설정
-    border-box를 쓰면서 padding을 입혀서 안에 내용의 폭 변함 없도록 */
+    border-box를 쓰면서 padding을 입혀서 안에 내부 폭 변함 없도록 */
 }
 
 /* 
@@ -21,13 +21,16 @@ body *::after {
 html {
     font-size: 10px;
 }
+
 body {
     font-family: 'Spoqa Han Sans', 'Sans-serif';
     font-size: 1.4rem;
+    color: #181818;
     /* display: flex;
     flex-flow: column nowrap;    
     align-items: center; */
 }
+
 
 /* 스킵 내비게이션 */
 .skip-nav {
@@ -43,12 +46,46 @@ body {
     /* viewport 크기를 줄여도 마진 값이 줄어들며 가운데 정렬로 보임 */
 }
 
+/* 헤더 */
 .header {
+    position: relative;
     background: yellow;
+    padding: 0 40px;
+    border-radius:  0 0 15px 15px;
+    
 }
+/* 로고 */
+.logo {
+    position: absolute;
+    top: 50px;
+    left: 65px;
+}
+
+/* 회원 안내 링크 목록 */
+.member {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;  /* ul상의 bullet 없애기 */
+    text-align: right;
+}
+
+.member li {
+    display: inline-block;
+    padding: 2px 0;
+} 
+
+/* 링크 스타일 */
+.member a {
+    color: inherit; /* agent 값이 아니라 상속된 값을 할당함 */
+    text-decoration: none;
+    padding: 8px 10px;
+    display: inline-block;
+    background: pink;
+}
+
 .visual {
     background: lime;
-    height: 120px; /*가급적이면 높이를 고정하는게 좋은 방법은 아님.. 보통 광고창에 높이 픽스 */
+    height: 120px; /*가급적이면 높이 고정하지 말 것.. 보통 광고창은 높이가 fix되니까 쓰는 것 */
 }
 
 /* .main {
@@ -58,6 +95,7 @@ body {
     height: 400px;
     padding: 30px;
     justify-content: space-between; */
+    
     /* space-evenly 를 쓰면 IE에서 적용 안됨 */
     /* space-between을 넣고 main에서 직접 padding값 입력 */
 /* } */
@@ -66,7 +104,7 @@ body {
     background: skyblue;
     padding: 30px 15px;
     overflow: hidden;
-    min-height: 450px; /*높이를 fix하지 말고 min-height 입력 -> contents에 따라 높이가 달라지도록*/
+    min-height: 450px; /* 높이 fix하지 말고 min-height 입력 -> contents에 따라 높이가 달라지도록 */
 }
 /* (1) group이 main을 뚫고 나올 때 main에 높이 지정 -> 경직된 방법... content 길이가 길어지면 또 수정해야되니까 */
 /* (2) html에 clearfix 추가 */
@@ -76,6 +114,7 @@ body {
     clear: both;
 } 
 */
+
  /* .clearfix::after {
      content: "";
      clear: both;
@@ -93,8 +132,8 @@ body {
     background: blueviolet;
     width: 250px;
     /* group1을 float 시키면 group1은 떠오르고 그 밑에 부모 요소에 보이지 않는 linebox가 생김 
-    linebox가 생기면서 linebox 기준 왼쪽에 위치함*/
-    /* 단 linebox가 생성되어 박스끼리 부딪힐 때 인라인 텍스트가 겹치면 밀어냄 */
+    linebox가 생기면서 linebox 기준 왼쪽에 위치함 */
+    /* 단 linebox가 생성되어 박스끼리 부딪칠 때 인라인 텍스트가 겹치면 밀어냄 */
 }
 .group2 {
     background: tomato;

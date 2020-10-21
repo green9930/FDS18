@@ -7,9 +7,141 @@
 </head>
 <body>
   <div class="skip-nav"><a href="#">본문 바로가기</a></div> 
-  <header class="header">header</header>
+  <header class="header">
+    <h1 class="logo"><a href="#"><img src="./images/logo.png" alt="Web Cafe"></a></h1>
+    <ul class="member">
+      <li>
+        <a href="#">홈</a>
+      </li>
+      <li>
+        <span class="divider">ㅣ</span> <!-- 홈 로그인 사이 여백 : 줄이 띄어지면서 자동 띄어쓰기 적용된 것 -->
+        <a href="#">로그인</a>
+      </li>
+      <li>
+        <span class="divider">ㅣ</span> 
+        <a href="#">회원가입</a>
+      </li>
+      <li>
+        <span class="divider">ㅣ</span> 
+        <a href="#">사이트맵</a>
+      </li>
+      <li>
+        <span class="divider">ㅣ</span> 
+        <a href="#">english</a>
+      </li>
+      <!-- [content+'divider']로 붙으면 마지막에 컨텐츠를 추가할 경우 divider까지 붙기 때문에 '홈'에 아무것도 붙이지 않고 
+      다음 컨텐츠부터 ['divider'+content]로 이어나가서 이후 유지보수할 경우 맨 뒤에 divider가 붙는 걸 방지 -->
+    </ul>
+    <nav class="navigation">
+      <h2 class="a11y-hidden">메인 메뉴</h2>
+      <ul class="menu">
+        <li class="menu-item menu-act"> <!-- tabindex=0 은 button을 쓸 것이기 때문에 불필요 -->
+          <button type="button" class="menu-button">HTML에 대해</button>
+          <ul class="sub-menu sub-menu1">
+            <li>
+              <a href="#">HTML5 소개</a>
+            </li>
+            <li>
+              <a href="#">레퍼런스 소개</a>
+            </li>
+            <li>
+              <a href="#">활용예제</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item" tabindex="0">
+          <button type="button" class="menu-button">CSS에 대해</button>
+          <ul class="sub-menu sub-menu2">
+            <li>
+              <a href="#">CSS 소개</a>
+            </li>
+            <li>
+              <a href="#">CSS2 VS CSS3</a>
+            </li>
+            <li>
+              <a href="#">CSS 애니메이션</a>
+            </li>
+            <li>
+              <a href="#">CSS Framework</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item" tabindex="0">
+          <button type="button" class="menu-button">웹표준</button>
+          <ul class="sub-menu sub-menu3">
+            <li>
+              <a href="#">웹표준 이란?</a>
+            </li>
+            <li>
+              <a href="#">W3C</a>
+            </li>
+            <li>
+              <a href="#">HTML5의 현재와 미래</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item" tabindex="0">
+          <button type="button" class="menu-button">웹 접근성</button>
+          <ul class="sub-menu sub-menu4">
+            <li>
+              <a href="#">웹 접근성의 개요</a>
+            </li>
+            <li>
+              <a href="#">장애 환경의 이해</a>
+            </li>
+            <li>
+              <a href="#">장차법</a>
+            </li>
+            <li>
+              <a href="#">웹 접근성 품질마크</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item" tabindex="0">
+          <button type="button" class="menu-button">묻고 답하기</button>
+          <ul class="sub-menu sub-menu5">
+            <li>
+              <a href="#">묻고 답하기</a>
+            </li>
+            <li>
+              <a href="#">FAQ</a>
+            </li>
+            <li>
+              <a href="#">1대1 질문</a>
+            </li>
+            <li>
+              <a href="#">웹표준</a>
+            </li>
+            <li>
+              <a href="#">웹 접근성</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item" tabindex="0">
+          <button type="button" class="menu-button">자료실</button>
+          <ul class="sub-menu sub-menu6">
+            <li>
+              <a href="#">공개 자료실</a>
+            </li>
+            <li>
+              <a href="#">이미지 자료실</a>
+            </li>
+            <li>
+              <a href="#">웹표준 자료실</a>
+            </li>
+            <li>
+              <a href="#">웹 접근성 자료실</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+
   <div class="visual">visual</div>
   <main class="main">
+  <!-- <main class="main clearfix"> -->
     <div class="group group1">group1</div>
     <div class="group group2">group2</div>
     <div class="group group3">group3</div>
