@@ -194,31 +194,64 @@ body {
 @keyframes textAni{
     0%{     /* from{} */
         font-size: 12px;
-        color: rgba(0,.0,.0,.0);
+        color: rgba(0,0,0,0);
         transform: translate(0,0);
     }
     100%{   /* to{} */
         font-size: 24px;
-        color: rgba(0,.0,.0,.1);
+        color: rgba(0,0,0,1);
         transform: translate(400px,75px);
     }
 }
 
 .visual {
-    background: lime;
+    position: relative;
     height: 120px; /*가급적이면 높이 고정하지 말 것.. 보통 광고창은 높이가 fix되니까 쓰는 것 */
 }
 
-.visual-text {
-    /* position: absolute; */
-    width: 500px;
-    margin: 0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    animation-name: textAni;
-    animation-duration: 3000ms;
-    animation-fill-mode: forwards;
+.visual::before, .visual::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    animation-name: bgAni;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    /*animation: bgAni 2000ms alternate infinite ease-in-out;*/ /* 단축 속성으로 한번에 표기*/
+}
+/* 공통적인 값은 한 번에 입력해줌 */
+/* ease-in-out : transition timing function*/
+
+.visual::before {
+    content: "";
+    background-image: url(./images/ani_flower_01.png), 
+                      url(./images/ani_flower_02.png);
+    background-position: 0 -10px, 670px 0;
 }
 
+.visual::after {
+    content: "";
+    background-image: url(./images/ani_flower_03.png), 
+                      url(./images/ani_flower_04.png);
+    background-position: 300px 0, 800px 0;
+    animation-delay: 1000ms;
+}
+
+.visual-text {
+    position: absolute;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    animation: textAni 2000ms forwards ease-in-out;
+    margin: 0;
+}
+
+@keyframes bgAni {
+    0%{ opacity: 1; }
+    100%{ opacity: 0; }
+}
 
 /* .main {
     background: skyblue;
