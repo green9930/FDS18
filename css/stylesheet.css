@@ -24,8 +24,7 @@ body *,
 body *::before,
 body *::after {
     box-sizing: border-box;
-} 
-*/
+} */
 
 
 html {
@@ -58,12 +57,12 @@ body {
 
 /* 헤더 */
 .header {
-    position: relative;
     background: #ffffff;
+    position: relative;
     padding: 0 40px;
     border-radius:  0 0 15px 15px;
-    
 }
+
 /* 로고 */
 .logo {
     position: absolute;
@@ -107,18 +106,15 @@ body {
     );
     border-top: 2px solid currentColor;
     margin: 10 0 0 0;
-    padding-left: 0;
+    padding-left: 200px;
     list-style: none;
     height: 47px;
     border-radius: 0 0 5px 5px;
-    padding-left: 200px;
 }
 
 .menu-item {
     position: relative;
     float: left;
-
-
 }
 
 .menu-button {
@@ -194,10 +190,35 @@ body {
     right: 0;
 }
 
+/* 텍스트 및 배경 애니메이션 - 비주얼 */
+@keyframes textAni{
+    0%{     /* from{} */
+        font-size: 12px;
+        color: rgba(0,.0,.0,.0);
+        transform: translate(0,0);
+    }
+    100%{   /* to{} */
+        font-size: 24px;
+        color: rgba(0,.0,.0,.1);
+        transform: translate(400px,75px);
+    }
+}
+
 .visual {
     background: lime;
     height: 120px; /*가급적이면 높이 고정하지 말 것.. 보통 광고창은 높이가 fix되니까 쓰는 것 */
 }
+
+.visual-text {
+    /* position: absolute; */
+    width: 500px;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    animation-name: textAni;
+    animation-duration: 3000ms;
+    animation-fill-mode: forwards;
+}
+
 
 /* .main {
     background: skyblue;
@@ -206,7 +227,6 @@ body {
     height: 400px;
     padding: 30px;
     justify-content: space-between; */
-    
     /* space-evenly 를 쓰면 IE에서 적용 안됨 */
     /* space-between을 넣고 main에서 직접 padding값 입력 */
 /* } */
