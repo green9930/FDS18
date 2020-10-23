@@ -267,7 +267,8 @@ body {
 /* } */
 
 .main {
-    background: skyblue;
+    background: #ffffff;
+
     padding: 30px 15px;
     overflow: hidden;
     min-height: 450px; /* 높이 fix하지 말고 min-height 입력 -> contents에 따라 높이가 달라지도록 */
@@ -295,34 +296,10 @@ body {
 }
 
 .group1 {
-    background: linear-gradient(to bottom, #e8852e 0%,#ed552f 35%,#ed552f 70%,#e8852e 100%);
-    background-color: #ed552f;
-    border-radius: 15px;
     width: 250px;
     /* group1을 float 시키면 group1은 떠오르고 그 밑에 부모 요소에 보이지 않는 linebox가 생김 
     linebox가 생기면서 linebox 기준 왼쪽에 위치함 */
     /* 단 linebox가 생성되어 박스끼리 부딪칠 때 인라인 텍스트가 겹치면 밀어냄 */
-}
-
-.login h2{
-    color: #ff0;
-    margin: 15px;
-}
-
-fieldset,.login-member {
-    background: #ffffff;
-    border-radius: 15px;
-    margin: 6px;
-    padding: 10px;
-    border: none;
-}
-
-.user-email {
-    font-size: .8em;
-}
-
-.login-member {
-    border-top: 2px solid #181818;
 }
 
 .group2 {
@@ -334,14 +311,108 @@ fieldset,.login-member {
 .group3 {
     background: lightgoldenrodyellow;
     width: 190px;
-
 }
+
+/* 로그인 */
+.login {
+    background: radial-gradient(circle at right top, #efa22f, #ed702d);
+    border-radius: 5px;
+    box-shadow: 5px 5px 0 0 #ccc;
+    padding: 15px 10px;
+}
+
+.login-heading {
+    margin: 0;
+    color: #ff0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-indent: 10px;
+}
+
+.login-form {
+    margin-top: 10px;
+    padding: 10px 10px 0 10px;
+    background: #ffffff;
+    border-radius: 5px 5px 0 0;
+}
+
+.login-form fieldset {
+    position: relative;
+    border: 0;
+    border-bottom: 1px solid #000000;
+    padding: 0;
+    padding-bottom: 5px;
+    margin: 0;
+}
+
+.user-email,
+.user-pw {
+  margin-bottom: 5px;
+}
+
+.user-email *,
+.user-pw * {
+  vertical-align: middle;
+}
+
+.login-form label {
+    width: 4em;
+    display: inline-block;
+}
+
+.login-form input {
+    width: 90px;
+    height: 22px;
+    border: 1px solid #ccc;
+    padding: 1px 1px 1px 0.5em
+}
+
+.btn-login {
+    /* 기본값: display: inline-block */
+    position: absolute; 
+    top: 0; /* fieldset 기준 0 */
+    right: 0; /* fieldset 기준 0 */
+    width: 50px;
+    height: 50px;
+    padding: 0 5px;
+    border: 0;
+    border-radius: 3px;
+    background: #ed702d;
+    color: #fff;
+}
+
+.login-member {
+    background: #ffffff;
+    padding: 2px 10px;
+    margin: 0;
+    list-style: none;
+    border-radius: 0 0 5px 5px;  
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    letter-spacing: -1px;
+}
+
+.login-member li {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.login-member, icon-right-open {
+    color: #ed702d;
+}
+
+.login-member a {
+    display: block;
+    padding: 8px 0;
+}
+
 .slogan {
     background: orange;
 }
 
 .footer {
     width: 100%;
-    background: gray;
-    
+    background: gray;    
 }
