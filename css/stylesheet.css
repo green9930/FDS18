@@ -243,20 +243,17 @@ a {
     /* 단축 속성으로 한번에 표기*/
 }
 
-/* 공통적인 값은 한 번에 입력해줌 */
-/* ease-in-out : transition timing function*/
-
 .visual::before {
     content: "";
     background-image: url(./images/ani_flower_01.png),
-        url(./images/ani_flower_02.png);
+                      url(./images/ani_flower_02.png);
     background-position: 0 -10px, 670px 0;
 }
 
 .visual::after {
     content: "";
     background-image: url(./images/ani_flower_03.png),
-        url(./images/ani_flower_04.png);
+                      url(./images/ani_flower_04.png);
     background-position: 300px 0, 800px 0;
     animation-delay: 1000ms;
 }
@@ -269,13 +266,8 @@ a {
 }
 
 @keyframes bgAni {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 /* .main {
@@ -291,7 +283,6 @@ a {
 
 .main {
     background: #ffffff;
-
     padding: 30px 15px;
     overflow: hidden;
     min-height: 450px;
@@ -390,7 +381,7 @@ a {
     width: 90px;
     height: 22px;
     border: 1px solid #ccc;
-    padding: 1px 1px 1px 0.5em
+    padding: 1px 1px 1px 0.5em;
 }
 
 .btn-login {
@@ -459,18 +450,73 @@ icon-right-open {
 .validation-list a:focus {
   color: #f00;
 }
-  
-.definition {
-    background: linear-gradient(to bottom, #eee, #ccc);
-    border-radius: 20px;
-    border: 1px solid #aaa;
-    padding: 20px;
-    margin-top: 40px;
-}  
+ 
 
-.web-terms {
-    margin: 0;
+/* 웹 관련 용어 */
+.term {
+    border: 1px solid #aaa;
+    background: linear-gradient(#ccc, #eee);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
 }
+
+.term-heading {
+    margin-top: 0; /* h2의 agent style을 없애줌 */
+    margin-bottom: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.term-list {
+    margin: 15px 0 0 0;
+}
+
+.term-list > div {
+    overflow: hidden; /* 외곽 무너지는 문제 */
+}
+
+.term-list div:nth-child(even) {
+    margin-top: 15px;
+}
+
+.term-list-subject,
+.term-list-brief {
+    float: right;
+    width: 145px;
+}
+
+.term-list-subject {
+    color: #296897;
+}
+
+.term-list-thumbnail {
+    float: left;
+    /* margin: 0 */
+}
+
+.term-list-thumbnail img {
+    display: block; /* dd(block) 내부에 img(inline)이 들어가면서 생긴 여백 문제 해결 */
+}
+
+.term-list-brief {
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+.term-list dd {
+    margin-left: 0;
+}
+  
+.term-list div:nth-child(even) .term-list-subject,
+.term-list div:nth-child(even) .term-list-brief {
+    float: left;
+}
+
+.term-list div:nth-child(even) .term-list-thumbnail {
+    float: right;
+}
+
 .slogan {
     background: orange;
 }
