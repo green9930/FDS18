@@ -461,7 +461,7 @@ icon-right-open {
 }
 
 .term-heading {
-    margin-top: 0; /* h2의 agent style을 없애줌 */
+    margin-top: 0; 
     margin-bottom: 0;
     font-size: 1.6rem;
     font-weight: 700;
@@ -546,7 +546,8 @@ icon-right-open {
     padding: 1px 1px 1px 0.5em;
     height: 22px;
     /*flex-grow: 1;*/  /* flex-grow를 쓰지 않은 이유 : */
-    width: 190px; /* 브라우저별로 width 값이 다 다르기 때문에 길이를 강제해줌 */
+    width: 190px; 
+    /* 브라우저별로 width 값이 다 다르기 때문에 길이를 강제해줌 */
     /* margin: 0 5px; */
 }
 
