@@ -81,7 +81,7 @@ a {
 /* 로고 */
 .logo {
     position: absolute;
-    top: 50px;
+    top: 40px;
     left: 65px;
 }
 
@@ -560,7 +560,6 @@ icon-right-open {
     padding: 0 10px;
 }
 
-
 /* 검색 폼 연습*/
 /* .search-form {
     border: 1px solid #aaa;
@@ -593,6 +592,200 @@ fieldset label {
     border: #ccc;
     border-radius: 5px;
 } */
+
+
+/* 공지사항 및 자료실 */
+.board {
+    position: relative;
+    /* height: 200px; : 다음 컨텐츠가 왔을 때 새소식 뒤에 겹쳐지는 문제 해결을 위함 */
+    height: 200px;
+    margin-top: 20px;
+}
+
+
+.notice-list,
+.pds-list,
+.notice-more, 
+.pds-more {
+    display: none;
+}
+
+.is-active .notice-list,
+.is-active .notice-more,
+.is-active .pds-list,
+.is-active .pds-more {
+    display: block;
+}
+
+.tab {
+    /* float: left; */
+    margin: 0;
+    position: absolute; /* modified */
+    top: 0;
+}
+
+.notice-heading {
+    left: 0;
+}
+
+.pds-heading {
+    left: 83px;
+}
+
+.tab a {
+    display: block; /* a를 블록요소로 바꿔주기 위해 */
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #aaa;
+    background: #ccc linear-gradient(#ccc, #eee);
+    color: #999;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 5px 15px;
+}
+
+.is-active .tab {
+    z-index: 5;
+}
+
+.is-active .tab a {
+    color: #ed702d;
+    border-color: #ed702d #ed702d #fff #ed702d;
+    background: #fff;
+    /* tab a 에서 대표속성으로 지정했기 때문에 재지정할 때에도 똑같이 background를 씀 (background-color말고) */
+}
+
+.notice-list,
+.pds-list {
+    width: 100%; /* why? 컨텐츠가 줄어들었기 때문에 width: 100을 입력해서 폭 맞춰줌*/
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    /* position: absolute;
+    left: 0;
+    top: 45px; */
+    padding-top: 45px;
+    min-height: 170px;
+}
+
+.notice-list li,
+.pds-list li {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 10px;
+}
+
+.notice-list a,
+.pds-list a {
+    /* flex-grow: 1; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 280px
+}
+
+.notice-more,
+.pds-more {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    padding: 8px;
+    /* 사용자 환경을 고려해 클릭할 수 있는 범위를 높여줌 -> top right 좌표 변경 */
+}
+
+.notice-more::before,
+.pds-more::before {
+    color: hsla(110, 50%, 30%, 1)
+}
+
+/* 새소식 */
+.news {
+    margin-top: 20px;
+    position: relative;
+}
+
+.news::before {
+    content: "";
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #ccc linear-gradient(to right, #ccc, #fff);
+}
+
+.news-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ed702d;
+    margin: 0;
+}
+
+.news-article {
+    margin-top: 35px;
+}
+
+.news-article-link {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 'thumbnail subject'
+                         'thumbnail date'
+                         'thumbnail brief';
+}
+
+.news-article-subject {
+    margin: 0 0 5px;
+    grid-area: subject;
+    font-size: 1.5rem;
+}
+
+.news-item-date {
+    grid-area: date;
+}
+
+.news-article-brief {
+    margin: 10px 0 0;
+    grid-area: brief;
+    line-height: 1.5;
+}
+
+.news-article-thumbnail {
+    margin: 0;
+    grid-area: thumbnail;
+    /* text-align: center; */
+    /* 가운데 정렬 */
+}
+
+.news-article-thumbnail img {
+    box-shadow: 0 15px 15px 0 #aaa;
+}
+
+.news-article-thumbnail figcaption {
+    margin-top: 15px;
+    margin-right: 18px;
+    text-align: center;
+
+}
+
+.news-more {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    padding: 8px;
+}
+
+.news-more::before {
+    color: hsla(110, 50%, 30%, 1)
+}
+
+.login-heading {
+    margin: 0;
+    color: #ff0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-indent: 10px;
+}
+
 
 .slogan {
     background: orange;

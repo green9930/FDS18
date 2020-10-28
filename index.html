@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <title>웹카페-고정형 레이아웃</title>
   <link rel="stylesheet" href="./css/stylesheet.css">
+  <script src="./js/jquery.min.js" defer></script>
+  <script src="./js/index.js" defer></script>
 </head>
 
 <body>
@@ -231,7 +233,6 @@
           <!-- div로 label input button 묶음 -->
         </fieldset>
       </form>
-    </div>
       <div class="board">
         <section class="notice is-active">
           <h2 class="notice-heading tab" id="noticeHeading">
@@ -287,14 +288,34 @@
               <time datetime="2020-10-28T14:38:56">2020.10.28</time>
             </li>
           </ul>
-          <a class="notice-more icon-plus" aria-labelledby="pdsHeading" title="자료실">더보기</a>
+          <a class="pds-more icon-plus" aria-labelledby="pdsHeading" title="자료실">더보기</a>
           <!-- <a title="공지사항"></a> -->
         </section>
-          <h2>자료실</h2>
       </div>
-    <div class="group group3">group3</div>
-  </main>
-  <div class="slogan">slogan</div>
+      <!-- <section class="news"><h2>새소식</h2></section> -->
+      <section class="news">
+        <h2 class="news-heading" id="newsHeading">새소식</h2>
+        <article class="news-article">
+          <a href="#" class="news-article-link">
+            <h3 class="news-article-subject">W3C 사이트가 리뉴얼 되었습니다.</h3>
+            <time class="news-item-date" datetime="2020-10-28T16:19:23">2020.10.28</time>
+            <p class="news-item-brief">
+              디자인 및 다양한 view 환경을 고려하여 구성되어 있으며, 
+              기존보다 최신 정보 및 개발자를 위한 기술 가이드도 
+              찾기 쉽도록 구성되어 있습니다.  
+            </p>
+            <figure class="news-article-thumbnail">
+              <img src="./images/news.gif" alt="" aria-labelledby="newsArticleThumbnail">
+              <figcaption id="newsArticleThumbnail">W3C 리뉴얼</figcaption>
+            </figure>
+          </a>
+        </article>
+        <a href="#" class="icon-plus news-more" title="새소식" aria-labelledby="newsHeading">더보기</a>
+      </setcion>
+    </div>
+      <div class="group group3">group3</div>
+    </main>
+    <div class="slogan">slogan</div>
   <footer class="footer">
     <div class="footer-wrapper">footer</div>
   </footer>
