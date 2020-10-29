@@ -325,7 +325,6 @@ a {
 }
 
 .group3 {
-    background: lightgoldenrodyellow;
     width: 190px;
 }
 
@@ -778,13 +777,96 @@ fieldset label {
     color: hsla(110, 50%, 30%, 1)
 }
 
-.login-heading {
-    margin: 0;
-    color: #ff0;
+/* 신규이벤트 및 관련사이트 */
+
+.gradient-box {
+    background: #ccc linear-gradient(#ccc, #eee);
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.event {
+    position: relative; 
+    border-bottom: 1px solid #aaa;
+}
+
+.event-heading,
+.related-heading {
     font-size: 1.6rem;
     font-weight: 700;
-    text-indent: 10px;
+    margin: 0;
 }
+
+.point-color {
+    color: #ed702d;
+}
+
+.event-thumbnail img {
+    border: 1px solid #aaa;
+    box-shadow: 5px 5px 0 0 #aaa;
+}
+
+.event-brief {
+    line-height: 1.5;
+}
+
+.event-brief em {
+    font-style: normal;
+}
+
+.btn-event {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btn-prev, 
+.btn-next {
+    box-sizing: border-box; /* 다시 한번 명시하려는 목적 */
+    border: 0;
+    overflow: hidden;
+    height: 18px;
+    padding: 18px 0 0;
+    width: 19px;
+    background: transparent url(./images/back_forward.png) 0 0 no-repeat;
+}
+
+.btn-next {
+    background-position: -36px 0;
+}
+
+.related-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0 0 0;
+    background: #fff;
+    height: 27px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: height 400ms, padding 400ms 400ms;
+}
+
+.related-list:hover {
+    height: 147px;
+    /* 127px인데 여백 때문에 */
+    padding: 10px 0;
+}
+
+.related-list li {
+    padding: 2px 5px 3px 5px;
+}
+
+.related-list a {
+    display: block;
+    line-height: 20px;
+    padding-left: 20px;
+}
+
+
+
+
 
 
 .slogan {
